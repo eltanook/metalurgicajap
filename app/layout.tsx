@@ -62,7 +62,7 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${outfit.variable} bg-background`} suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <meta name="geo.region" content="AR-X" />
         <meta name="geo.placename" content="Villa María, Córdoba" />
       </head>
