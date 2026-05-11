@@ -10,7 +10,7 @@ const trabajos = [
     id: 1,
     title: 'Trailer Cerealero',
     description: 'Fabricación completa de trailer cerealero de 40 toneladas con sistema de descarga lateral. Estructura reforzada y acabados de primera calidad.',
-    image: '/trabajos/trailer-cerealero.png',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2032',
   },
   {
     id: 2,
