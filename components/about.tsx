@@ -148,7 +148,7 @@ export function About() {
           transition={{ duration: 0.6 }}
           className="mt-16 md:mt-20 overflow-hidden"
         >
-          <h3 className="text-center text-foreground font-black text-xl md:text-2xl lg:text-3xl mb-8 uppercase tracking-wider text-balance">
+          <h3 className="text-center text-foreground font-bold text-lg md:text-xl mb-8 uppercase tracking-wider text-balance">
             Trabajamos con todas las marcas de carrocerías del mercado
           </h3>
           <div className="relative w-full overflow-hidden flex items-center py-4">
