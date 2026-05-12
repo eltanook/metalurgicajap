@@ -1,23 +1,29 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Facebook, Instagram, Linkedin, BadgeCheck, Award, ArrowRight, Users } from 'lucide-react'
+import { Facebook, Instagram, BadgeCheck, Award, ArrowRight, Users } from 'lucide-react'
 import { FaWhatsapp } from 'react-icons/fa'
 import Image from 'next/image'
 
 const clientLogos = [
-  'Mercedes-Benz',
-  'Scania',
-  'Volvo',
-  'Iveco',
-  'Renault',
-  'Ford',
-  'Volkswagen',
-  'DAF',
+  'Helvética',
+  'Astivia',
+  'Ramdon',
+  'Montenegro',
+  'Hermann',
+  'Ombú',
+  'Salto',
+  'Bonano',
+  'Vulcano',
+  'Halcón',
+  'Lambert',
+  'Petinari',
+  'Grosspal',
+  'Sola y Brusa'
 ]
 
 export function About() {
-  const phoneNumber = '543531234567'
+  const phoneNumber = '543536563732'
   const message = encodeURIComponent('Hola! Me gustaría conocer más sobre MJAP y sus servicios.')
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`
 
@@ -49,6 +55,7 @@ export function About() {
               y certificaciones requeridas por la industria. Cada proyecto es único y recibe nuestra 
               atención personalizada de principio a fin.
             </p>
+
             <div className="flex flex-wrap gap-4 mb-8">
               <div className="flex items-center gap-2 text-foreground">
                 <BadgeCheck className="w-5 h-5 text-[#c41e2a]" />
@@ -107,13 +114,6 @@ export function About() {
                 >
                   <Instagram className="w-6 h-6 text-white" />
                 </a>
-                <a
-                  href="#"
-                  aria-label="LinkedIn de MJAP"
-                  className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center hover:bg-[#c41e2a] transition-colors"
-                >
-                  <Linkedin className="w-6 h-6 text-white" />
-                </a>
               </div>
             </div>
 
@@ -141,27 +141,41 @@ export function About() {
           </motion.div>
         </div>
 
-        {/* Infinite Marquee */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mt-16 md:mt-20"
+          className="mt-16 md:mt-20 overflow-hidden"
         >
-          <p className="text-center text-muted-foreground mb-8 text-xs md:text-sm uppercase tracking-widest">
-            Trabajamos con las mejores marcas
-          </p>
-          <div className="overflow-hidden">
-            <div className="animate-marquee flex gap-8 md:gap-16 items-center hover:[animation-play-state:paused]">
-              {[...clientLogos, ...clientLogos].map((logo, index) => (
-                <div
-                  key={`${logo}-${index}`}
-                  className="flex-shrink-0 text-xl md:text-2xl lg:text-3xl font-bold text-muted-foreground/40 hover:text-[#c41e2a] transition-colors cursor-pointer"
-                >
-                  {logo}
-                </div>
-              ))}
+          <h3 className="text-center text-foreground font-black text-xl md:text-2xl lg:text-3xl mb-8 uppercase tracking-wider text-balance">
+            Trabajamos con todas las marcas de carrocerías del mercado
+          </h3>
+          <div className="relative w-full overflow-hidden flex items-center py-4">
+            <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-background to-transparent z-10"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-background to-transparent z-10"></div>
+            
+            <div className="animate-marquee flex w-max hover:[animation-play-state:paused]">
+              <div className="flex gap-12 md:gap-24 items-center px-6 md:px-12">
+                {clientLogos.map((logo, index) => (
+                  <div
+                    key={`logo-1-${index}`}
+                    className="flex-shrink-0 text-xl md:text-2xl lg:text-3xl font-bold text-muted-foreground/40 hover:text-[#c41e2a] transition-colors cursor-pointer"
+                  >
+                    {logo}
+                  </div>
+                ))}
+              </div>
+              <div className="flex gap-12 md:gap-24 items-center px-6 md:px-12">
+                {clientLogos.map((logo, index) => (
+                  <div
+                    key={`logo-2-${index}`}
+                    className="flex-shrink-0 text-xl md:text-2xl lg:text-3xl font-bold text-muted-foreground/40 hover:text-[#c41e2a] transition-colors cursor-pointer"
+                  >
+                    {logo}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </motion.div>

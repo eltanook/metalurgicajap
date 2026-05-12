@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Facebook, Instagram, Linkedin, Youtube, Phone, Mail, MapPin } from 'lucide-react'
+import { Facebook, Instagram, Phone, Mail, MapPin } from 'lucide-react'
 import { FaWhatsapp } from 'react-icons/fa'
 
 const navLinks = [
@@ -15,8 +15,6 @@ const navLinks = [
 const socialLinks = [
   { icon: Facebook, href: '#', label: 'Facebook' },
   { icon: Instagram, href: '#', label: 'Instagram' },
-  { icon: Linkedin, href: '#', label: 'LinkedIn' },
-  { icon: Youtube, href: '#', label: 'YouTube' },
 ]
 
 export function Footer() {
@@ -25,7 +23,7 @@ export function Footer() {
       {/* Google Maps */}
       <div className="w-full h-48 sm:h-56 md:h-64 lg:h-80">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53837.18474090366!2d-63.29287!3d-32.40747!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95cddf2c0f6c8dcb%3A0x99f6d48a8a42ca7!2sVilla%20Mar%C3%ADa%2C%20C%C3%B3rdoba!5e0!3m2!1ses!2sar!4v1703000000000!5m2!1ses!2sar"
+          src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=es&amp;q=C.%20Carlos%20Avalle%206058,%20C%C3%B3rdoba+(MJAP)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
           width="100%"
           height="100%"
           className="grayscale hover:grayscale-0 transition-all duration-700"
@@ -41,7 +39,9 @@ export function Footer() {
       <div
         className="relative"
         style={{
-          background: 'radial-gradient(ellipse at center, #1a1a1a 0%, #0d0d0d 50%, #000000 100%)',
+          background: '#0a0a0a',
+          backgroundImage: 'linear-gradient(rgba(196, 30, 42, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(196, 30, 42, 0.08) 1px, transparent 1px), radial-gradient(ellipse at center, #1a1a1a 0%, #0d0d0d 50%, #000000 100%)',
+          backgroundSize: '30px 30px, 30px 30px, 100% 100%',
         }}
       >
         <div className="container mx-auto px-4 py-10 md:py-12 lg:py-16">
@@ -100,25 +100,25 @@ export function Footer() {
               <ul className="space-y-3 md:space-y-4">
                 <li>
                   <a 
-                    href="https://wa.me/543531234567?text=Hola!%20Me%20contacto%20desde%20la%20web%20de%20MJAP." 
+                    href="https://wa.me/543536563732?text=Hola!%20Me%20contacto%20desde%20la%20web%20de%20MJAP." 
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-400 hover:text-white transition-colors flex items-center gap-2 md:gap-3 text-sm md:text-base"
                   >
                     <FaWhatsapp className="w-4 h-4 md:w-5 md:h-5 text-[#c41e2a]" />
-                    +54 353 123-4567
+                    +54 35 3656-3732
                   </a>
                 </li>
                 <li>
-                  <a href="mailto:contacto@mjap.com.ar" className="text-gray-400 hover:text-white transition-colors flex items-center gap-2 md:gap-3 text-sm md:text-base">
+                  <a href="mailto:somosmetalurgicajap@gmail.com" className="text-gray-400 hover:text-white transition-colors flex items-center gap-2 md:gap-3 text-sm md:text-base">
                     <Mail className="w-4 h-4 md:w-5 md:h-5 text-[#c41e2a]" />
-                    contacto@mjap.com.ar
+                    somosmetalurgicajap@gmail.com
                   </a>
                 </li>
                 <li>
                   <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors flex items-start gap-2 md:gap-3 text-sm md:text-base">
                     <MapPin className="w-4 h-4 md:w-5 md:h-5 text-[#c41e2a] flex-shrink-0 mt-0.5" />
-                    <span>Ruta Nacional 9, Villa María, Córdoba</span>
+                    <span>C. Carlos Avalle 6058, Villa María, Córdoba</span>
                   </a>
                 </li>
               </ul>
@@ -145,8 +145,7 @@ export function Footer() {
                 ))}
               </div>
               <p className="text-gray-500 text-xs md:text-sm mt-4 md:mt-6">
-                Lunes a Viernes: 8:00 - 18:00<br />
-                Sábados: 8:00 - 13:00
+                Lunes a Viernes: 8:00 - 17:30
               </p>
             </motion.div>
           </div>

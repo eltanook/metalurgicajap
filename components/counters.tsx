@@ -64,16 +64,16 @@ export function Counters() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
             <CounterItem
               icon={Clock}
-              target={15}
+              target={36}
               prefix="+"
               suffix=" Años"
               label="de Experiencia"
             />
             <CounterItem
               icon={Truck}
-              target={500}
-              prefix="+"
-              label="Trailers Entregados"
+              target={23}
+              prefix=""
+              label="Provincias de Alcance"
             />
             <CounterItem
               icon={Award}

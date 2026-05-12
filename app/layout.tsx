@@ -22,7 +22,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: 'MJAP | Fábrica de Carrozados, Trailers y Estructuras Metálicas - Villa María, Córdoba',
-  description: 'MJAP - Fabricación profesional de trailers, carrocerías, acoplados y estructuras metálicas. Más de 15 años de experiencia en Villa María, Córdoba. Homologaciones, servicios para camiones, restauraciones y repuestos. Cotizá sin compromiso.',
+  description: 'MJAP - Fabricación profesional de trailers, carrocerías, acoplados y estructuras metálicas. Más de 36 años de experiencia en Villa María, Córdoba. Homologaciones, servicios para camiones, restauraciones y repuestos. Cotizá sin compromiso.',
   keywords: 'trailers, carrocerías, metalúrgica, fabricación, homologaciones, Villa María, Córdoba, MJAP, acoplados, semirremolques, estructuras metálicas, reparación camiones',
   authors: [{ name: 'MJAP' }],
   creator: 'MJAP',

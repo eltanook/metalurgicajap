@@ -40,25 +40,25 @@ export function Contact() {
     {
       icon: FaWhatsapp,
       title: 'Ronald',
-      value: '+54 353 123-4567',
-      href: 'https://wa.me/543531234567?text=Hola%20Ronald!%20Me%20contacto%20desde%20la%20web%20de%20MJAP.',
+      value: '+54 35 3656-3732',
+      href: 'https://wa.me/543536563732?text=Hola%20Ronald!%20Me%20contacto%20desde%20la%20web%20de%20MJAP.',
     },
     {
       icon: FaWhatsapp,
       title: 'Juan',
-      value: '+54 353 765-4321',
-      href: 'https://wa.me/543537654321?text=Hola%20Juan!%20Me%20contacto%20desde%20la%20web%20de%20MJAP.',
+      value: '+54 35 3565-7977',
+      href: 'https://wa.me/543535657977?text=Hola%20Juan!%20Me%20contacto%20desde%20la%20web%20de%20MJAP.',
     },
     {
       icon: Mail,
       title: 'Email',
-      value: 'contacto@mjap.com.ar',
-      href: 'mailto:contacto@mjap.com.ar',
+      value: 'somosmetalurgicajap@gmail.com',
+      href: 'mailto:somosmetalurgicajap@gmail.com',
     },
     {
       icon: MapPin,
       title: 'Local Físico',
-      value: 'Ruta 9, Villa María, Córdoba',
+      value: 'C. Carlos Avalle 6058, Villa María, Córdoba',
       href: 'https://maps.google.com',
     },
   ]

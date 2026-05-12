@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Truck, FileCheck, Wrench, RotateCcw, Package, Settings } from 'lucide-react'
+import { Truck, FileCheck, Wrench, Siren, Package, Settings } from 'lucide-react'
 import { FaWhatsapp } from 'react-icons/fa'
 
 const services = [
@@ -19,15 +19,15 @@ const services = [
   },
   {
     icon: Wrench,
-    title: 'Servicios Camiones',
-    description: 'Mantenimiento y reparación de camiones y vehículos pesados. Servicio técnico especializado con repuestos originales.',
-    waMessage: 'Hola! Necesito información sobre servicios de mantenimiento para camiones.',
+    title: 'Servicios',
+    description: 'Mantenimiento, reparación y restauración integral de unidades. Devolvemos la vida útil a tu carrocería o trailer con servicio técnico especializado y acabados de primera.',
+    waMessage: 'Hola! Necesito información sobre servicios y restauraciones.',
   },
   {
-    icon: RotateCcw,
-    title: 'Restauraciones',
-    description: 'Restauramos trailers y carrocerías antiguas o deterioradas. Devolvemos la vida útil a tu unidad con acabados de primera.',
-    waMessage: 'Hola! Me interesa información sobre restauración de trailers.',
+    icon: Siren,
+    title: 'Auxilios',
+    description: 'Servicio de auxilio mecánico y rescate para transporte pesado. Asistencia rápida y eficiente para que tu unidad vuelva a circular lo antes posible.',
+    waMessage: 'Hola! Necesito asistencia o un auxilio mecánico.',
   },
   {
     icon: Package,
@@ -44,7 +44,7 @@ const services = [
   },
 ]
 
-const phoneNumber = '543531234567'
+const phoneNumber = '543536563732'
 
 export function Services() {
   return (
