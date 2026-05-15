@@ -42,14 +42,14 @@ export function Hero() {
       id="inicio"
       className="relative min-h-[90vh] flex items-center overflow-hidden"
       style={{
-        backgroundImage: `url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2070')`,
+        backgroundImage: `url('/adjuntos/1000448588.jpg')`,
         backgroundAttachment: 'fixed',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
     >
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/70" />
+      <div className="absolute inset-0 bg-black/75 md:bg-black/70" />
 
       <div className="container mx-auto px-4 relative z-10 py-12">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -94,12 +94,12 @@ export function Hero() {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="hidden lg:block"
+            className="w-full lg:block"
           >
             <div className="relative">
               {/* Main Card with Shiny Effect */}
-              <div className="shiny-effect glass rounded-2xl p-6 lg:p-8 backdrop-blur-lg">
-                <div className="grid grid-cols-2 gap-4 lg:gap-6">
+              <div className="shiny-effect glass rounded-2xl p-4 sm:p-6 lg:p-8 backdrop-blur-lg">
+                <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:gap-6">
                   {/* Service Cards */}
                   {[
                     { icon: TrailerIcon, label: 'Trailers', color: 'from-red-500 to-red-700', waText: 'Hola! Me interesa información sobre Trailers.' },
@@ -116,10 +116,10 @@ export function Hero() {
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
                       whileHover={{ scale: 1.05, y: -5 }}
-                      className={`bg-gradient-to-br ${item.color} rounded-xl p-4 lg:p-6 text-white text-center shadow-lg cursor-pointer block`}
+                      className={`bg-gradient-to-br ${item.color} rounded-xl p-3 sm:p-4 lg:p-6 text-white text-center shadow-lg cursor-pointer block`}
                     >
-                      <item.icon className="w-8 h-8 lg:w-10 lg:h-10 mx-auto mb-2 lg:mb-3" />
-                      <span className="font-semibold text-xs lg:text-sm">{item.label}</span>
+                      <item.icon className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 mx-auto mb-1 sm:mb-2 lg:mb-3" />
+                      <span className="font-semibold text-[10px] sm:text-xs lg:text-sm">{item.label}</span>
                     </motion.a>
                   ))}
                 </div>
@@ -129,7 +129,7 @@ export function Hero() {
               <motion.div
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-                className="absolute -top-4 -right-4 bg-[#c41e2a] text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg"
+                className="absolute -top-3 sm:-top-4 -right-2 sm:-right-4 bg-[#c41e2a] text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[10px] sm:text-sm font-bold shadow-lg z-20"
               >
                 +36 Años
               </motion.div>
@@ -137,7 +137,7 @@ export function Hero() {
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut' }}
                 onClick={() => setIsFaqOpen(true)}
-                className="absolute -bottom-4 -left-4 bg-white text-[#1a1a1a] px-6 py-3 rounded-full text-base font-bold shadow-xl hover:bg-gray-100 transition-colors cursor-pointer"
+                className="absolute -bottom-3 sm:-bottom-4 -left-2 sm:-left-4 bg-white text-[#1a1a1a] px-4 sm:px-6 py-2 sm:py-3 rounded-full text-xs sm:text-base font-bold shadow-xl hover:bg-gray-100 transition-colors cursor-pointer z-20"
               >
                 Preguntas Frecuentes
               </motion.button>

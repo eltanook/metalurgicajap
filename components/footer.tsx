@@ -23,7 +23,7 @@ export function Footer() {
       {/* Google Maps */}
       <div className="w-full h-48 sm:h-56 md:h-64 lg:h-80">
         <iframe
-          src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=es&amp;q=C.%20Carlos%20Avalle%206058,%20C%C3%B3rdoba+(MJAP)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+          src="https://maps.google.com/maps?q=-32.4319394,-63.1713123&z=16&hl=es&output=embed"
           width="100%"
           height="100%"
           className="grayscale hover:grayscale-0 transition-all duration-700"
@@ -45,20 +45,21 @@ export function Footer() {
         }}
       >
         <div className="container mx-auto px-4 py-10 md:py-12 lg:py-16">
-          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             {/* Column 1 - Logo & Description */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="col-span-2 md:col-span-1"
+              className="sm:col-span-2 lg:col-span-1"
             >
               <a href="#inicio" className="inline-block mb-4 md:mb-6">
-                <span className="text-3xl md:text-4xl font-black tracking-tight">
-                  <span className="text-white">M</span>
-                  <span className="text-[#c41e2a]">JAP</span>
-                </span>
+                <img 
+                  src="/logo.png" 
+                  alt="MJAP Logo" 
+                  className="h-auto max-h-10 md:max-h-12 w-auto object-contain opacity-90 hover:opacity-100 transition-all duration-300 [filter:drop-shadow(0_0_8px_rgba(196,30,42,0.4))]" 
+                />
               </a>
               <p className="text-gray-400 leading-relaxed mb-4 md:mb-6 text-sm md:text-base">
                 Fabricantes especializados en carrozados, trailers y estructuras metálicas de alta calidad 
@@ -116,7 +117,7 @@ export function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors flex items-start gap-2 md:gap-3 text-sm md:text-base">
+                  <a href="https://www.google.com/maps/place/C.+Carlos+Avalle+6058,+C%C3%B3rdoba/@-32.4424149,-63.1688278,14.66z/data=!4m5!3m4!1s0x95cc69bc6b0e29d9:0x2f77482a99c0c415!8m2!3d-32.4319394!4d-63.1713123" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors flex items-start gap-2 md:gap-3 text-sm md:text-base">
                     <MapPin className="w-4 h-4 md:w-5 md:h-5 text-[#c41e2a] flex-shrink-0 mt-0.5" />
                     <span>C. Carlos Avalle 6058, Villa María, Córdoba</span>
                   </a>

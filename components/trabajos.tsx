@@ -1,46 +1,64 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { ChevronLeft, ChevronRight, Maximize2, X } from 'lucide-react'
 import Image from 'next/image'
 
 const trabajos = [
   {
     id: 1,
-    title: 'Trailer Cerealero',
-    description: 'Fabricación completa de trailer cerealero de 40 toneladas con sistema de descarga lateral. Estructura reforzada y acabados de primera calidad.',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2032',
+    title: 'Trailers para Montacargas',
+    description: 'Diseño y fabricación de trailers especializados para el transporte de montacargas, con rampas reforzadas y estructuras de alta resistencia.',
+    image: '/adjuntos/1000448413.jpg',
   },
   {
     id: 2,
-    title: 'Carrocería Refrigerada',
-    description: 'Carrocería refrigerada para transporte de alimentos con aislamiento térmico de alta eficiencia. Cumple con todas las normas sanitarias.',
-    image: 'https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=2076',
+    title: 'Carrocería Tribuelco',
+    description: 'Fabricación de carrocerías con sistema de triple volcado (trasero y lateral), optimizando la versatilidad en la descarga de materiales.',
+    image: '/adjuntos/1000450491.webp',
   },
   {
     id: 3,
-    title: 'Acoplado Playón',
-    description: 'Acoplado playón de 14 metros para transporte de maquinaria pesada. Piso reforzado y rampas hidráulicas incorporadas.',
-    image: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=2070',
+    title: 'Certificaciones de Izaje',
+    description: 'Servicio profesional de homologación y certificación de equipos de izaje (hidrogrúas), garantizando seguridad y cumplimiento normativo.',
+    image: '/adjuntos/1000449206.jpg',
   },
   {
     id: 4,
-    title: 'Semirremolque Tanque',
-    description: 'Semirremolque cisterna de 30.000 litros para transporte de combustibles. Homologado y certificado según normativas vigentes.',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2032',
+    title: 'Reparación de Bateas',
+    description: 'Mantenimiento integral, reparaciones estructurales y modificaciones técnicas en bateas y volcadores de gran capacidad.',
+    image: '/adjuntos/1000450834.webp',
   },
   {
     id: 5,
-    title: 'Restauración Completa',
-    description: 'Restauración integral de trailer de más de 15 años de antigüedad. Renovación de estructura, pisos, laterales y sistema eléctrico.',
-    image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=2070',
+    title: 'Mantenimiento de Chasis',
+    description: 'Servicios especializados de alargue de chasis, reparación de cabinas y sistemas eléctricos para transporte pesado.',
+    image: '/adjuntos/1000449210.jpg',
   },
   {
     id: 6,
-    title: 'Estructura Metálica',
-    description: 'Fabricación de estructura metálica para galpón industrial de 500m2. Diseño personalizado con vigas reticuladas.',
-    image: 'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=2071',
+    title: 'Carrocerías a Medida',
+    description: 'Fabricación de carrocerías tipo playa con barandas volcables, adaptadas a las necesidades específicas de carga de cada cliente.',
+    image: '/adjuntos/1000452973.jpg',
+  },
+  {
+    id: 7,
+    title: 'Trailers Especiales',
+    description: 'Desarrollo de trailers de perfil bajo para el traslado de maquinaria pesada, vehículos y equipos industriales de dimensiones especiales.',
+    image: '/adjuntos/1000453499.jpg',
+  },
+  {
+    id: 8,
+    title: 'Equipos para Picado',
+    description: 'Diseño y fabricación de puertas y componentes específicos para equipos de picado de forraje y logística agrícola.',
+    image: '/adjuntos/1000450835.webp',
+  },
+  {
+    id: 9,
+    title: 'Carrocerías de Carga',
+    description: 'Montaje de unidades de carga general con acabados de alta calidad, pintura industrial y detalles técnicos de precisión.',
+    image: '/adjuntos/1000448588.jpg',
   },
 ]
 
@@ -48,7 +66,18 @@ const filteredTrabajos = trabajos.filter(t => t.image && t.image.trim() !== '')
 
 export function Trabajos() {
   const [currentIndex, setCurrentIndex] = useState(0)
-  const itemsPerView = { mobile: 1, tablet: 2, desktop: 3 }
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0)
+
+  // Prevenir scroll cuando el modal está abierto
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+    return () => { document.body.style.overflow = 'unset' }
+  }, [isModalOpen])
 
   const nextSlide = () => {
     setCurrentIndex(prev => (prev + 1) % filteredTrabajos.length)
@@ -56,6 +85,19 @@ export function Trabajos() {
 
   const prevSlide = () => {
     setCurrentIndex(prev => (prev - 1 + filteredTrabajos.length) % filteredTrabajos.length)
+  }
+
+  const openModal = (index: number) => {
+    setSelectedImageIndex(index)
+    setIsModalOpen(true)
+  }
+
+  const nextModalImage = () => {
+    setSelectedImageIndex(prev => (prev + 1) % filteredTrabajos.length)
+  }
+
+  const prevModalImage = () => {
+    setSelectedImageIndex(prev => (prev - 1 + filteredTrabajos.length) % filteredTrabajos.length)
   }
 
   const getVisibleItems = () => {
@@ -114,37 +156,52 @@ export function Trabajos() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.4, ease: "easeOut" }}
             >
-              {getVisibleItems().map((trabajo, index) => (
-                <motion.div
-                  key={`${trabajo.id}-${currentIndex}`}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className={`group relative overflow-hidden rounded-xl shadow-lg ${
-                    index === 0 ? 'block' : index === 1 ? 'hidden md:block' : 'hidden lg:block'
-                  }`}
-                >
-                  <div className="relative h-[300px] sm:h-[350px] md:h-[400px]">
-                    <Image
-                      src={trabajo.image}
-                      alt={trabajo.title}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                    
-                    {/* Title always visible */}
-                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-4 md:p-6">
-                      <h3 className="text-lg md:text-xl font-bold text-white">{trabajo.title}</h3>
-                    </div>
+              {getVisibleItems().map((trabajo, index) => {
+                const actualIndex = filteredTrabajos.findIndex(t => t.id === trabajo.id)
+                return (
+                  <motion.div
+                    key={`${trabajo.id}-${currentIndex}`}
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.4, delay: index * 0.1 }}
+                    className={`group relative overflow-hidden rounded-xl shadow-lg ${
+                      index === 0 ? 'block' : index === 1 ? 'hidden md:block' : 'hidden lg:block'
+                    }`}
+                  >
+                    <div className="relative h-[300px] sm:h-[350px] md:h-[400px]">
+                      <Image
+                        src={trabajo.image}
+                        alt={trabajo.title}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                      
+                      {/* Title always visible */}
+                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-4 md:p-6">
+                        <h3 className="text-lg md:text-xl font-bold text-white">{trabajo.title}</h3>
+                      </div>
 
-                    {/* Hover Overlay with Description */}
-                    <div className="absolute inset-0 bg-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 md:p-6 text-center">
-                      <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">{trabajo.title}</h3>
-                      <p className="text-white/90 text-sm md:text-base leading-relaxed">{trabajo.description}</p>
+                      {/* Hover Overlay with Description */}
+                      <div className="absolute inset-0 bg-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 md:p-6 text-center">
+                        <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">{trabajo.title}</h3>
+                        <p className="text-white/90 text-sm md:text-base leading-relaxed mb-6">{trabajo.description}</p>
+                        
+                        {/* Zoom Button - Bottom Right */}
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation()
+                            openModal(actualIndex)
+                          }}
+                          className="absolute bottom-4 right-4 w-10 h-10 bg-[#c41e2a] text-white rounded-lg flex items-center justify-center shadow-lg hover:bg-[#a01822] transition-colors"
+                          title="Ampliar imagen"
+                        >
+                          <Maximize2 className="w-5 h-5" />
+                        </button>
+                      </div>
                     </div>
-                  </div>
-                </motion.div>
-              ))}
+                  </motion.div>
+                )
+              })}
             </motion.div>
           </div>
 
@@ -163,6 +220,75 @@ export function Trabajos() {
           </div>
         </div>
       </div>
+
+      {/* Gallery Modal */}
+      <AnimatePresence>
+        {isModalOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 p-4 md:p-8"
+            onClick={() => setIsModalOpen(false)}
+          >
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className="absolute top-4 right-4 md:top-8 md:right-8 text-white hover:text-[#c41e2a] transition-colors z-[110]"
+              aria-label="Cerrar galería"
+            >
+              <X className="w-8 h-8 md:w-10 md:h-10" />
+            </button>
+
+            {/* Navigation in Modal */}
+            <button
+              onClick={(e) => { e.stopPropagation(); prevModalImage(); }}
+              className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-[#c41e2a] text-white rounded-full flex items-center justify-center transition-colors z-[110]"
+              aria-label="Imagen anterior"
+            >
+              <ChevronLeft className="w-8 h-8" />
+            </button>
+            <button
+              onClick={(e) => { e.stopPropagation(); nextModalImage(); }}
+              className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-[#c41e2a] text-white rounded-full flex items-center justify-center transition-colors z-[110]"
+              aria-label="Imagen siguiente"
+            >
+              <ChevronRight className="w-8 h-8" />
+            </button>
+
+            <motion.div
+              key={selectedImageIndex}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              transition={{ duration: 0.3 }}
+              className="relative w-full max-w-5xl aspect-video md:aspect-[16/9] flex flex-col items-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="relative w-full h-full overflow-hidden rounded-lg">
+                <Image
+                  src={filteredTrabajos[selectedImageIndex].image}
+                  alt={filteredTrabajos[selectedImageIndex].title}
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </div>
+              <div className="mt-4 text-center">
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
+                  {filteredTrabajos[selectedImageIndex].title}
+                </h3>
+                <p className="text-white/70 text-sm md:text-base max-w-2xl">
+                  {filteredTrabajos[selectedImageIndex].description}
+                </p>
+                <div className="mt-4 text-white/50 text-xs md:text-sm">
+                  {selectedImageIndex + 1} / {filteredTrabajos.length}
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   )
 }
+

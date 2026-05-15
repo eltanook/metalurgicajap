@@ -77,11 +77,12 @@ export function Navbar() {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
-            <a href="#inicio" className="flex items-center">
-              <span className="text-3xl md:text-4xl font-black tracking-tight">
-                <span className={!isScrolled && theme === 'light' ? 'text-white' : 'text-foreground'}>M</span>
-                <span className="text-[#c41e2a]">JAP</span>
-              </span>
+            <a href="#inicio" className="flex items-center group flex-shrink-0">
+              <img 
+                src="/logo.png" 
+                alt="MJAP Logo" 
+                className="h-auto max-h-10 md:max-h-12 w-auto object-contain transition-all duration-300"
+              />
             </a>
 
             {/* Desktop Nav Links */}
