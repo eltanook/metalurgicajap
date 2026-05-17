@@ -90,7 +90,7 @@ export function About() {
           >
             <div className="relative overflow-hidden rounded-2xl shadow-2xl">
               <Image
-                src="/adjuntos/1000452973.jpg"
+                src="/adjuntos/1000452973.webp"
                 alt="Taller metalúrgico MJAP - Fabricación de trailers y carrocerías en Villa María, Córdoba"
                 width={600}
                 height={450}

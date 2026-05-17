@@ -42,7 +42,7 @@ export function Hero() {
       id="inicio"
       className="relative min-h-[90vh] flex items-center overflow-hidden"
       style={{
-        backgroundImage: `url('/adjuntos/1000448588.jpg')`,
+        backgroundImage: `url('/adjuntos/1000448588.webp')`,
         backgroundAttachment: 'fixed',
         backgroundSize: 'cover',
         backgroundPosition: 'center',

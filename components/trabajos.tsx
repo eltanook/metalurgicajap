@@ -10,7 +10,7 @@ const trabajos = [
     id: 1,
     title: 'Trailers para Montacargas',
     description: 'Diseño y fabricación de trailers especializados para el transporte de montacargas, con rampas reforzadas y estructuras de alta resistencia.',
-    image: '/adjuntos/1000448413.jpg',
+    image: '/adjuntos/1000448413.webp',
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ const trabajos = [
     id: 3,
     title: 'Certificaciones de Izaje',
     description: 'Servicio profesional de homologación y certificación de equipos de izaje (hidrogrúas), garantizando seguridad y cumplimiento normativo.',
-    image: '/adjuntos/1000449206.jpg',
+    image: '/adjuntos/1000449206.webp',
   },
   {
     id: 4,
@@ -34,19 +34,19 @@ const trabajos = [
     id: 5,
     title: 'Mantenimiento de Chasis',
     description: 'Servicios especializados de alargue de chasis, reparación de cabinas y sistemas eléctricos para transporte pesado.',
-    image: '/adjuntos/1000449210.jpg',
+    image: '/adjuntos/1000449210.webp',
   },
   {
     id: 6,
     title: 'Carrocerías a Medida',
     description: 'Fabricación de carrocerías tipo playa con barandas volcables, adaptadas a las necesidades específicas de carga de cada cliente.',
-    image: '/adjuntos/1000452973.jpg',
+    image: '/adjuntos/1000452973.webp',
   },
   {
     id: 7,
     title: 'Trailers Especiales',
     description: 'Desarrollo de trailers de perfil bajo para el traslado de maquinaria pesada, vehículos y equipos industriales de dimensiones especiales.',
-    image: '/adjuntos/1000453499.jpg',
+    image: '/adjuntos/1000453499.webp',
   },
   {
     id: 8,
@@ -58,7 +58,7 @@ const trabajos = [
     id: 9,
     title: 'Carrocerías de Carga',
     description: 'Montaje de unidades de carga general con acabados de alta calidad, pintura industrial y detalles técnicos de precisión.',
-    image: '/adjuntos/1000448588.jpg',
+    image: '/adjuntos/1000448588.webp',
   },
 ]
 
@@ -206,16 +206,20 @@ export function Trabajos() {
           </div>
 
           {/* Dots Indicator */}
-          <div className="flex justify-center gap-2 mt-6 md:mt-8">
+          <div className="flex justify-center gap-1 mt-6 md:mt-8">
             {filteredTrabajos.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-colors ${
-                  currentIndex === index ? 'bg-[#c41e2a]' : 'bg-border hover:bg-muted-foreground'
-                }`}
+                className="w-8 h-8 flex items-center justify-center focus:outline-none group"
                 aria-label={`Ir al trabajo ${index + 1}`}
-              />
+              >
+                <span
+                  className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-colors ${
+                    currentIndex === index ? 'bg-[#c41e2a]' : 'bg-border group-hover:bg-muted-foreground'
+                  }`}
+                />
+              </button>
             ))}
           </div>
         </div>

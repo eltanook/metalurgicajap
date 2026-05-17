@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     description: 'Fabricación de trailers, carrocerías y estructuras metálicas de alta calidad.',
   },
   alternates: {
-    canonical: '/',
+    canonical: 'https://metalurgicajap.vercel.app',
   },
 }
 
@@ -63,6 +63,7 @@ export default function RootLayout({
     <html lang="es" className={`${outfit.variable} bg-background`} suppressHydrationWarning>
       <head>
         <link rel="icon" href="/logo-contacto.png" type="image/png" />
+        <link rel="preload" as="image" href="/adjuntos/1000448588.webp" fetchPriority="high" />
         <meta name="geo.region" content="AR-X" />
         <meta name="geo.placename" content="Villa María, Córdoba" />
       </head>

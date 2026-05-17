@@ -58,6 +58,8 @@ export function Footer() {
                 <img 
                   src="/logo.png" 
                   alt="MJAP Logo" 
+                  width={139}
+                  height={70}
                   className="h-auto max-h-10 md:max-h-12 w-auto object-contain opacity-90 hover:opacity-100 transition-all duration-300 [filter:drop-shadow(0_0_8px_rgba(196,30,42,0.4))]" 
                 />
               </a>
