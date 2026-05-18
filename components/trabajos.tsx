@@ -58,7 +58,7 @@ const trabajos = [
     id: 9,
     title: 'Carrocerías de Carga',
     description: 'Montaje de unidades de carga general con acabados de alta calidad, pintura industrial y detalles técnicos de precisión.',
-    image: '/adjuntos/1000448588.webp',
+    image: '/adjuntos/1000448588.jpg',
   },
 ]
 

@@ -52,7 +52,7 @@ export function Services() {
       id="servicios"
       className="py-16 md:py-20 lg:py-28 relative"
       style={{
-        backgroundImage: `url('/adjuntos/1000449210.jpg')`,
+        backgroundImage: `url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=2070')`,
         backgroundAttachment: 'fixed',
         backgroundSize: 'cover',
         backgroundPosition: 'center',

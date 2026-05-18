@@ -63,7 +63,7 @@ export default function RootLayout({
     <html lang="es" className={`${outfit.variable} bg-background`} suppressHydrationWarning>
       <head>
         <link rel="icon" href="/logo-contacto.png" type="image/png" />
-        <link rel="preload" as="image" href="/adjuntos/1000448588.webp" fetchPriority="high" />
+        <link rel="preload" as="image" href="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2070" fetchPriority="high" />
         <meta name="geo.region" content="AR-X" />
         <meta name="geo.placename" content="Villa María, Córdoba" />
       </head>
