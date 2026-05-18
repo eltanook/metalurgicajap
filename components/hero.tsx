@@ -137,9 +137,10 @@ export function Hero() {
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut' }}
                 onClick={() => setIsFaqOpen(true)}
-                className="absolute -bottom-3 sm:-bottom-4 -left-2 sm:-left-4 bg-white text-[#1a1a1a] px-4 sm:px-6 py-2 sm:py-3 rounded-full text-xs sm:text-base font-bold shadow-xl hover:bg-gray-100 transition-colors cursor-pointer z-20"
+                className="absolute -bottom-3 sm:-bottom-4 -left-2 sm:-left-4 bg-white text-[#1a1a1a] px-4 sm:px-6 py-2 sm:py-3 rounded-full text-xs sm:text-base font-bold shadow-xl hover:bg-gray-100 transition-colors cursor-pointer z-20 flex items-center gap-2 group"
               >
                 Preguntas Frecuentes
+                <ArrowRight className="w-4 h-4 text-[#c41e2a] transition-transform group-hover:translate-x-1" />
               </motion.button>
             </div>
           </motion.div>
