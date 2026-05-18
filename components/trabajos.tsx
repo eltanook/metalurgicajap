@@ -168,7 +168,10 @@ export function Trabajos() {
                       index === 0 ? 'block' : index === 1 ? 'hidden md:block' : 'hidden lg:block'
                     }`}
                   >
-                    <div className="relative h-[300px] sm:h-[350px] md:h-[400px]">
+                    <div 
+                      className="relative h-[300px] sm:h-[350px] md:h-[400px] cursor-pointer"
+                      onClick={() => openModal(actualIndex)}
+                    >
                       <Image
                         src={trabajo.image}
                         alt={trabajo.title}
@@ -177,8 +180,12 @@ export function Trabajos() {
                       />
                       
                       {/* Title always visible */}
-                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-4 md:p-6">
-                        <h3 className="text-lg md:text-xl font-bold text-white">{trabajo.title}</h3>
+                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-4 md:p-6 flex justify-between items-center z-10">
+                        <h3 className="text-lg md:text-xl font-bold text-white pr-2">{trabajo.title}</h3>
+                        {/* Zoom Indicator for Mobile */}
+                        <div className="md:hidden flex-shrink-0 w-8 h-8 bg-[#c41e2a] text-white rounded-lg flex items-center justify-center shadow-lg">
+                          <Maximize2 className="w-4 h-4" />
+                        </div>
                       </div>
 
                       {/* Hover Overlay with Description */}
